@@ -9,8 +9,8 @@ export const catalog: CatalogConfig = {
       short: 'Свежий, травянистый, обжарка в воке',
       description:
         'Неферментированный чай с сохраняемым зелёным листом. Заваривать деликатно, избегая кипятка, чтобы сохранить свежесть и сладость.',
-      icon: '/icons/green.svg',
-      cover: '/covers/green.svg',
+      icon: 'icons/green.svg',
+      cover: 'covers/green.svg',
       color: '#40A463',
       tags: ['цветочный', 'фруктовый', 'медовый'],
       extras: {
@@ -28,7 +28,7 @@ export const catalog: CatalogConfig = {
           title: 'Лунцзин (Longjing)',
           short: 'Ореховая сладость, плоский лист',
           description: 'Легендарный зелёный чай из Чжэцзяна. Нежная жарка даёт орехово‑карамельные ноты.',
-          icon: '/icons/longjing.svg',
+          icon: 'icons/longjing.svg',
           tags: ['ореховый', 'медовый']
         },
         {
@@ -36,7 +36,7 @@ export const catalog: CatalogConfig = {
           title: 'Би Ло Чунь (Bi Luo Chun)',
           short: 'Фруктово‑цветочный, скрученные «изумруды»',
           description: 'Тонкий аромат сада: белый пушок, сладкая травянистость и фруктовые полутона.',
-          icon: '/icons/bi-luo-chun.svg',
+          icon: 'icons/bi-luo-chun.svg',
           tags: ['цветочный', 'фруктовый']
         }
       ]
@@ -47,8 +47,8 @@ export const catalog: CatalogConfig = {
       short: 'Деликатный, медово‑цветочный',
       description:
         'Минимальная обработка: сушка и лёгкое вяление. Мягкая сладость, шелковистая текстура. Терпит чуть большую температуру, но любит нежность.',
-      icon: '/icons/white.svg',
-      cover: '/covers/white.svg',
+      icon: 'icons/white.svg',
+      cover: 'covers/white.svg',
       color: '#C1B28D',
       tags: ['медовый', 'цветочный'],
       extras: {
@@ -66,7 +66,7 @@ export const catalog: CatalogConfig = {
           title: 'Инь Чжэнь (Silver Needle)',
           short: 'Почки, шёлковистая сладость',
           description: 'Собран из почек. Чистый, эфирный настой с мягкой сладостью и лёгким ланом.',
-          icon: '/icons/yin-zhen.svg',
+          icon: 'icons/yin-zhen.svg',
           tags: ['цветочный', 'медовый']
         },
         {
@@ -74,7 +74,7 @@ export const catalog: CatalogConfig = {
           title: 'Бай Мудань (White Peony)',
           short: 'Почки + лист, фруктовый оттенок',
           description: 'Баланс почек и листа. Чуть насыщеннее, часто с грушево‑медовыми нотами.',
-          icon: '/icons/bai-mudan.svg',
+          icon: 'icons/bai-mudan.svg',
           tags: ['медовый', 'фруктовый']
         }
       ]
@@ -85,8 +85,8 @@ export const catalog: CatalogConfig = {
       short: 'Мягкий, «томлёный»',
       description:
         'Близок к зелёному, но с фазой «томления», сглаживающей травянистость. Редкая и деликатная категория.',
-      icon: '/icons/yellow.svg',
-      cover: '/covers/yellow.svg',
+      icon: 'icons/yellow.svg',
+      cover: 'covers/yellow.svg',
       color: '#D8B400',
       tags: ['медовый', 'ореховый'],
       extras: {
@@ -103,7 +103,7 @@ export const catalog: CatalogConfig = {
           title: 'Цзюньшань Иньчжэнь',
           short: 'Тростниковый сахар, мягкая сладость',
           description: 'Игольчатые почки с выраженной мягкой сладостью, очень деликатный настой.',
-          icon: '/icons/junshan-yinzhen.svg',
+          icon: 'icons/junshan-yinzhen.svg',
           tags: ['медовый']
         },
         {
@@ -111,7 +111,7 @@ export const catalog: CatalogConfig = {
           title: 'Хуошань Хуанъя',
           short: 'Тёплый хлебный акцент',
           description: 'Редкий пример жёлтого чая с хлебно‑солодовыми оттенками.',
-          icon: '/icons/huoshan-huangya.svg',
+          icon: 'icons/huoshan-huangya.svg',
           tags: ['ореховый']
         }
       ]
@@ -122,8 +122,8 @@ export const catalog: CatalogConfig = {
       short: 'Полуферментированный: от цветочного до жареного',
       description:
         'Уровень ферментации варьирует. Лёгкие «зелёные» улуны — цветочные и сливочные; тёмные — жареные, пряные.',
-      icon: '/icons/oolong.svg',
-      cover: '/covers/oolong.svg',
+      icon: 'icons/oolong.svg',
+      cover: 'covers/oolong.svg',
       color: '#5C8A57',
       tags: ['цветочный', 'ореховый', 'медовый'],
       extras: {
@@ -140,7 +140,7 @@ export const catalog: CatalogConfig = {
           title: 'Тегуаньинь',
           short: 'Сливочно‑цветочный профиль',
           description: 'Свежий «зелёный» улун с молочно‑цветочными тонами и мягкой сладостью.',
-          icon: '/icons/tieguanyin.svg',
+          icon: 'icons/tieguanyin.svg',
           tags: ['цветочный']
         },
         {
@@ -148,7 +148,7 @@ export const catalog: CatalogConfig = {
           title: 'Да Хун Пао',
           short: 'Жареный, миндаль/карамель',
           description: 'Скалы Уишань: минералы, корочка хлеба, ореховый послевкусный шлейф.',
-          icon: '/icons/da-hong-pao.svg',
+          icon: 'icons/da-hong-pao.svg',
           tags: ['ореховый']
         },
         {
@@ -156,7 +156,7 @@ export const catalog: CatalogConfig = {
           title: 'Дун Дин',
           short: 'Тайвань, баланс сливок и жарки',
           description: 'Классика Тайваня: карамельная румяность и сливочность в одном профиле.',
-          icon: '/icons/dong-ding.svg',
+          icon: 'icons/dong-ding.svg',
           tags: ['ореховый', 'медовый']
         }
       ]
@@ -166,8 +166,8 @@ export const catalog: CatalogConfig = {
       title: 'Красный чай (Hong Cha)',
       short: 'Насыщенный, мёд, сухофрукты',
       description: 'Полностью ферментированный. Тёплые тона мёда, сухофруктов, иногда какао и карамели.',
-      icon: '/icons/red.svg',
-      cover: '/covers/red.svg',
+      icon: 'icons/red.svg',
+      cover: 'covers/red.svg',
       color: '#B4442A',
       tags: ['медовый', 'фруктовый', 'ореховый'],
       extras: {
@@ -185,7 +185,7 @@ export const catalog: CatalogConfig = {
           title: 'Дянь Хун',
           short: 'Юньнань, мёд/сухофрукты',
           description: 'Юньнаньская классика с густым мёдом, черносливом и мягкой пряностью.',
-          icon: '/icons/dian-hong.svg',
+          icon: 'icons/dian-hong.svg',
           tags: ['медовый', 'фруктовый']
         },
         {
@@ -193,7 +193,7 @@ export const catalog: CatalogConfig = {
           title: 'Цзинь Цзюнь Мэй',
           short: 'Бисквит, мёд, ягоды',
           description: 'Мелкие почки из Уишаня. Сложный десертный профиль с ягодной кислинкой.',
-          icon: '/icons/jin-jun-mei.svg',
+          icon: 'icons/jin-jun-mei.svg',
           tags: ['медовый', 'фруктовый']
         },
         {
@@ -201,7 +201,7 @@ export const catalog: CatalogConfig = {
           title: 'Цымэнь Хун Ча (Keemun)',
           short: 'Какао, дымка, сухофрукты',
           description: 'Английская классика для завтрака: сухофрукты, лёгкая дымка, какао‑бобы.',
-          icon: '/icons/qimen.svg',
+          icon: 'icons/qimen.svg',
           tags: ['медовый', 'фруктовый']
         }
       ]
@@ -211,8 +211,8 @@ export const catalog: CatalogConfig = {
       title: 'Пуэр шэн (сырой)',
       short: 'Фруктово‑травяной, «доходит» с годами',
       description: 'Неферментированный прессованный чай. С возрастом темнеет и усложняется.',
-      icon: '/icons/puer-sheng.svg',
-      cover: '/covers/puer-sheng.svg',
+      icon: 'icons/puer-sheng.svg',
+      cover: 'covers/puer-sheng.svg',
       color: '#6B8E23',
       tags: ['фруктовый', 'медовый'],
       extras: {
@@ -229,7 +229,7 @@ export const catalog: CatalogConfig = {
           title: 'Иу Шэн 2020',
           short: 'Мёд, тропики, мягкая терпкость',
           description: 'Молодой шэн с солнечной фруктовостью и лёгкой терпкой кожурой.',
-          icon: '/icons/yiwu-2020.svg',
+          icon: 'icons/yiwu-2020.svg',
           tags: ['фруктовый', 'медовый']
         },
         {
@@ -237,7 +237,7 @@ export const catalog: CatalogConfig = {
           title: 'Линцан Шэн 2021',
           short: 'Зелёный манго, травы',
           description: 'Бодрый профиль с манго‑травяной свежестью и чистой сладостью.',
-          icon: '/icons/lincang-2021.svg',
+          icon: 'icons/lincang-2021.svg',
           tags: ['фруктовый']
         }
       ]
@@ -247,8 +247,8 @@ export const catalog: CatalogConfig = {
       title: 'Пуэр шу (готовый)',
       short: 'Землистый, хлебный, мягкий',
       description: 'Постферментация в кучах. Плотный, бархатный настой с хлебно‑ореховым профилем.',
-      icon: '/icons/puer-shu.svg',
-      cover: '/covers/puer-shu.svg',
+      icon: 'icons/puer-shu.svg',
+      cover: 'covers/puer-shu.svg',
       color: '#5A3E2B',
       tags: ['землистый', 'ореховый', 'медовый'],
       extras: {
@@ -265,7 +265,7 @@ export const catalog: CatalogConfig = {
           title: 'Мэнхай Шу 2015',
           short: 'Какао, хлебная корка',
           description: 'Стабильный купаж Мэнхая: густая текстура, мягкая землянистость, какао‑нотки.',
-          icon: '/icons/menghai-2015.svg',
+          icon: 'icons/menghai-2015.svg',
           tags: ['землистый', 'ореховый']
         },
         {
@@ -273,7 +273,7 @@ export const catalog: CatalogConfig = {
           title: 'Рецепт 7572',
           short: 'Классика фабрики',
           description: 'Иконический бленд с округлым, понятным вкусом для повседневного чаепития.',
-          icon: '/icons/recipe-7572.svg',
+          icon: 'icons/recipe-7572.svg',
           tags: ['землистый', 'ореховый']
         }
       ]
@@ -283,8 +283,8 @@ export const catalog: CatalogConfig = {
       title: 'Тёмный чай (Hei Cha)',
       short: 'Постферментированный, выдержанный',
       description: 'Широкая категория постферментированных чаёв вне пуэра: хлебные, ореховые, иногда пряные ноты.',
-      icon: '/icons/dark.svg',
-      cover: '/covers/dark.svg',
+      icon: 'icons/dark.svg',
+      cover: 'covers/dark.svg',
       color: '#3E2F2A',
       tags: ['землистый', 'ореховый', 'медовый'],
       extras: {
@@ -301,7 +301,7 @@ export const catalog: CatalogConfig = {
           title: 'Лю Бао',
           short: 'Орех, кедр, грибная капля',
           description: 'Гладкий, маслянистый профиль с лесными оттенками и лёгкой пряностью.',
-          icon: '/icons/liu-bao.svg',
+          icon: 'icons/liu-bao.svg',
           tags: ['землистый', 'ореховый']
         },
         {
@@ -309,7 +309,7 @@ export const catalog: CatalogConfig = {
           title: 'Фу Чжуань',
           short: '«Золотой цветок», сладковатый хлеб',
           description: 'Кирпич с Eurotium cristatum: мягкая сладость, хлебная корочка, сухофрукты.',
-          icon: '/icons/fu-zhuan.svg',
+          icon: 'icons/fu-zhuan.svg',
           tags: ['медовый', 'ореховый', 'землистый']
         }
       ]
