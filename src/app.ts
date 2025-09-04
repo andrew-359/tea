@@ -10,6 +10,7 @@ import { createAppBar } from './ui/components/appbar';
 import { createTagBar } from './ui/components/tagbar';
 import { currentRoute, onRouteChange } from './controller';
 import { getFilters, subscribe as subscribeStore } from './store';
+import { setupReveal } from './utils/reveal';
 
 const root = document.getElementById('app')!;
 const container = document.createElement('div');
@@ -35,6 +36,9 @@ if (!location.hash) location.hash = '#/';
 const router = new Router();
 router.setNotFound(() => {});
 router.start();
+
+// Reveal animations setup
+const reveal = setupReveal();
 
 function renderCurrent() {
   const r = currentRoute();
@@ -64,12 +68,15 @@ onRouteChange(() => {
     container.classList.add('view-enter');
   });
   renderCurrent();
+  // scan newly rendered content
+  reveal.scan(container);
 });
 
 // Re-render on filter changes
 subscribeStore(() => {
   appbar.refreshChips();
   renderCurrent();
+  reveal.scan(container);
 });
 
 // Appbar shadow on scroll
@@ -81,7 +88,23 @@ window.addEventListener('scroll', () => {
 
 // Initial render
 renderCurrent();
+reveal.scan(container);
 
 function notFound() {
   container.innerHTML = '<h1>Не найдено</h1>';
 }
+
+// Wire up filters toggle button in appbar
+let filtersOpen = false;
+appbar.setOnToggleFilters(() => {
+  filtersOpen = !filtersOpen;
+  tagbar.toggle();
+  appbar.setFiltersOpen(filtersOpen);
+});
+
+// Open filters when tags are activated from content
+window.addEventListener('filters:open', () => {
+  filtersOpen = true;
+  tagbar.show();
+  appbar.setFiltersOpen(true);
+});

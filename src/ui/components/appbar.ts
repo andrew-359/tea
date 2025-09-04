@@ -1,6 +1,7 @@
 import { el } from '../../utils/dom';
 import { canGoBack, goBack, goHome, currentRoute } from '../../controller';
-import { getFilters } from '../../store';
+import { catalog } from '../../config/catalog';
+import { lucide } from '../icons';
 
 export function createAppBar() {
   const root = el('div', { className: 'appbar' });
@@ -8,13 +9,36 @@ export function createAppBar() {
   const center = el('div', { className: 'appbar__center' });
   const right = el('div', { className: 'appbar__side appbar__side--right' });
 
-  const backBtn = iconButton('M12 19 5 12 12 5', 'Назад', () => goBack());
-  const homeBtn = iconButton('M3 11l9-8 9 8v10H3z', 'Домой', () => goHome());
+  let onToggleFilters: (() => void) | undefined;
+  let filtersOpen = false;
 
+  const menuBtn = iconButton('Menu', 'Фильтры', () => {
+    onToggleFilters?.();
+    setFiltersOpen(!filtersOpen);
+  });
+
+  const backBtn = iconButton('ArrowLeft', 'Назад', () => goBack());
+
+  left.appendChild(menuBtn);
   left.appendChild(backBtn);
-  left.appendChild(homeBtn);
   const title = el('div', { className: 'appbar__title', text: 'Каталог' });
   center.appendChild(title);
+
+  const logo = document.createElement('img');
+  logo.className = 'appbar__logo';
+  logo.alt = 'Домой';
+  logo.src = '/logo.jpeg';
+  logo.title = 'На главную';
+  logo.tabIndex = 0;
+  logo.setAttribute('role', 'button');
+  logo.addEventListener('click', () => goHome());
+  logo.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      goHome();
+    }
+  });
+  right.appendChild(logo);
 
   root.appendChild(left);
   root.appendChild(center);
@@ -26,11 +50,22 @@ export function createAppBar() {
 
   function updateByRoute() {
     const r = currentRoute();
-    if (r.kind === 'home') setTitle('Каталог чая');
-    else if (r.kind === 'category') setTitle(r.slug);
-    else if (r.kind === 'subcategory') setTitle(r.sub);
-    else setTitle('');
-    backBtn.style.visibility = canGoBack() ? 'visible' : 'hidden';
+    if (r.kind === 'home') {
+      setTitle('Каталог чая');
+      backBtn.style.visibility = 'hidden';
+    } else if (r.kind === 'category') {
+      const cat = catalog.categories.find((c) => c.slug === r.slug);
+      setTitle(cat?.title ?? r.slug);
+      backBtn.style.visibility = 'visible';
+    } else if (r.kind === 'subcategory') {
+      const cat = catalog.categories.find((c) => c.slug === r.slug);
+      const sub = cat?.children?.find((s) => s.slug === r.sub);
+      setTitle(sub?.title ?? r.sub);
+      backBtn.style.visibility = 'visible';
+    } else {
+      setTitle('');
+      backBtn.style.visibility = canGoBack() ? 'visible' : 'hidden';
+    }
   }
 
   updateByRoute();
@@ -40,23 +75,23 @@ export function createAppBar() {
     /* no-op placeholder for backward compatibility */
   }
 
-  return { root, setTitle, updateByRoute, refreshChips } as any;
+  function setFiltersOpen(open: boolean) {
+    filtersOpen = open;
+    menuBtn.setAttribute('aria-pressed', String(open));
+    menuBtn.classList.toggle('icon-btn--active', open);
+  }
+
+  function setOnToggleFilters(cb: () => void) {
+    onToggleFilters = cb;
+  }
+
+  return { root, setTitle, updateByRoute, refreshChips, setOnToggleFilters, setFiltersOpen } as any;
 }
 
-function iconButton(pathD: string, aria: string, onClick: () => void) {
+function iconButton(name: string, aria: string, onClick: () => void) {
   const btn = el('button', { className: 'icon-btn', attrs: { 'aria-label': aria } });
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('viewBox', '0 0 24 24');
-  svg.classList.add('icon');
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', pathD);
-  path.setAttribute('fill', 'none');
-  path.setAttribute('stroke', 'currentColor');
-  path.setAttribute('stroke-width', '2');
-  path.setAttribute('stroke-linecap', 'round');
-  path.setAttribute('stroke-linejoin', 'round');
-  svg.appendChild(path);
-  btn.appendChild(svg);
+  const svg = lucide(name as any, { size: 22, strokeWidth: 2, className: 'icon' });
+  if (svg) btn.appendChild(svg);
   btn.addEventListener('click', onClick);
   return btn as HTMLButtonElement;
 }

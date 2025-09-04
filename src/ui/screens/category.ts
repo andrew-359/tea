@@ -1,6 +1,7 @@
 import type { Category } from '../../types/catalog';
 import { card } from '../components/card';
 import { el, clear } from '../../utils/dom';
+import { lucide } from '../icons';
 
 export interface FilterOpts {
   query?: string;
@@ -37,6 +38,8 @@ export function CategoryScreen(
     for (const [k, v] of Object.entries(category.extras)) {
       if (!(k in map)) continue;
       const b = el('div', { className: 'badge' });
+      const icon = svgForBadge(k);
+      if (icon) b.appendChild(icon);
       b.appendChild(el('span', { className: 'badge__label', text: map[k] }));
       b.appendChild(el('span', { className: 'badge__value', text: String(v) }));
       badges.appendChild(b);
@@ -79,4 +82,17 @@ export function CategoryScreen(
   }
   root.appendChild(list);
   if (items.length === 0) root.appendChild(el('div', { className: 'muted', text: 'Ничего не найдено' }));
+}
+
+function svgForBadge(key: string) {
+  const map: Record<string, string> = {
+    temp_c: 'Thermometer',
+    grams_per_100ml: 'Scale',
+    western_ratio: 'CupSoda',
+    rinses: 'Droplets',
+    first_steep_sec: 'Clock',
+    steeps: 'Timer'
+  };
+  const name = map[key] as any;
+  return lucide(name, { size: 16, strokeWidth: 2 });
 }

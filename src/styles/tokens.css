@@ -11,6 +11,7 @@
   /* Motion */
   --duration-fast: 120ms;
   --duration-med: 180ms;
+  --duration-slow: 260ms;
   --easing: cubic-bezier(.2,.8,.2,1);
 
   /* Elevation */
@@ -30,16 +31,19 @@
   --alpha-focus: .20;
 
   /* Semantic color roles with Telegram theme fallbacks */
-  --bg-color: var(--tg-bg_color, #0f1b15);
-  --surface-color: var(--tg-section_bg_color, #13241c);
-  --secondary-bg-color: var(--tg-secondary_bg_color, #162b22);
-  --text-color: var(--tg-text_color, #e8f3ec);
-  --hint-color: var(--tg-hint_color, #a6beb1);
+  --bg-color: var(--tg-bg_color, #000000);
+  --surface-color: var(--tg-section_bg_color, #0d0d0d);
+  --secondary-bg-color: var(--tg-secondary_bg_color, #111111);
+  --text-color: var(--tg-text_color, #f2f2f2);
+  --hint-color: var(--tg-hint_color, #b6b6b6);
 
-  --accent: var(--tg-button_color, #2fb36f);
+  /* Softer default green; Telegram theme overrides if present */
+  --accent: var(--tg-button_color, #2aa36d);
+  /* Additional accent: maroon/burgundy for content icons */
+  --accent-burgundy: #8E1E3A;
   /* Derive weak/strong shades relative to accent for pressed/hover states */
-  --accent-weak: color-mix(in oklab, var(--accent) 80%, black);
-  --accent-strong: color-mix(in oklab, var(--accent) 80%, white);
+  --accent-weak: color-mix(in oklab, var(--accent) 70%, black);
+  --accent-strong: color-mix(in oklab, var(--accent) 70%, white);
   --link-color: var(--tg-link_color, var(--accent-strong));
   --button-color: var(--tg-button_color, var(--accent));
   --button-text-color: var(--tg-button_text_color, #0b1a13);
