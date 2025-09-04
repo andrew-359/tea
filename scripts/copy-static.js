@@ -8,8 +8,11 @@ const indexSrc = path.resolve(__dirname, '..', 'index.html');
 
 fs.mkdirSync(dist, { recursive: true });
 
-// copy index.html
-fs.copyFileSync(indexSrc, path.join(dist, 'index.html'));
+// copy index.html and 404.html (SPA fallback for GH Pages)
+const indexDst = path.join(dist, 'index.html');
+fs.copyFileSync(indexSrc, indexDst);
+// also duplicate as 404.html to help GH Pages serve SPA
+fs.copyFileSync(indexSrc, path.join(dist, '404.html'));
 
 // copy public dir contents to dist
 function copyDir(src, dst) {
@@ -26,4 +29,3 @@ function copyDir(src, dst) {
 
 copyDir(pub, dist);
 console.log('Static copied to dist');
-
