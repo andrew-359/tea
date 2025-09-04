@@ -1,0 +1,16 @@
+{
+  "name": "tma-qr-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/copy-static.js && esbuild src/app.ts --bundle --sourcemap --outdir=dist/assets --servedir=dist --watch",
+    "build": "esbuild src/app.ts --bundle --minify --outdir=dist/assets && node scripts/copy-static.js",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "esbuild": "^0.23.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {}
+}

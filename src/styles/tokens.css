@@ -1,0 +1,46 @@
+:root {
+  /* Radius and spacing */
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-med: 180ms;
+  --easing: cubic-bezier(.2,.8,.2,1);
+
+  /* Elevation */
+  --elevation-1: 0 2px 10px rgba(0,0,0,0.06);
+  --elevation-2: 0 6px 18px rgba(0,0,0,0.12);
+  --elevation-3: 0 10px 30px rgba(0,0,0,0.16);
+
+  /* Typography */
+  --font-size-body: 16px;
+  --line-height-body: 1.45;
+  --font-size-sub: 14px;
+  --font-size-h1: 22px;
+
+  /* States */
+  --opacity-disabled: .38;
+  --alpha-pressed: .12;
+  --alpha-focus: .20;
+
+  /* Semantic color roles with Telegram theme fallbacks */
+  --bg-color: var(--tg-bg_color, #0f1b15);
+  --surface-color: var(--tg-section_bg_color, #13241c);
+  --secondary-bg-color: var(--tg-secondary_bg_color, #162b22);
+  --text-color: var(--tg-text_color, #e8f3ec);
+  --hint-color: var(--tg-hint_color, #a6beb1);
+
+  --accent: var(--tg-button_color, #2fb36f);
+  /* Derive weak/strong shades relative to accent for pressed/hover states */
+  --accent-weak: color-mix(in oklab, var(--accent) 80%, black);
+  --accent-strong: color-mix(in oklab, var(--accent) 80%, white);
+  --link-color: var(--tg-link_color, var(--accent-strong));
+  --button-color: var(--tg-button_color, var(--accent));
+  --button-text-color: var(--tg-button_text_color, #0b1a13);
+}
