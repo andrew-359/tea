@@ -27,7 +27,7 @@ export function createAppBar() {
   const logo = document.createElement('img');
   logo.className = 'appbar__logo';
   logo.alt = 'Домой';
-  logo.src = '/logo.jpeg';
+  logo.src = 'logo.jpeg';
   logo.title = 'На главную';
   logo.tabIndex = 0;
   logo.setAttribute('role', 'button');
